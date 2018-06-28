@@ -1,0 +1,14 @@
+{
+  "name": "you_suffer",
+  "preferGlobal": "true",
+  "version": "0.0.1",
+  "author": {
+    "name": "Zimo Xiao",
+    "email": "xiaozimo@zuggr.com"
+  },
+  "dependencies": {
+    "request": "*",
+    "cheerio": "*",
+    "opn": "*"
+  }
+}
