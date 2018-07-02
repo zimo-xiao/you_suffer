@@ -14,9 +14,14 @@ function interval() {
         max = price;
       }
     });
+    if (max === 0) {
+      console.error('stuck at browser verification');
+      return 0;
+    }
     if (max > price_line) {
       if (!is_found) {
         opn(__dirname + '/you_suffer.mp3');
+        opn(url);
       }
       console.log('Found! There is a deal with the price of ' + max);
       is_found = true;
@@ -28,10 +33,10 @@ function interval() {
 }
 
 var args = process.argv.slice(2);
-if (typeof args[0] === 'undefinded') {
+var price_line = parseInt(args[0]);
+if (!price_line) {
   console.log('please set a price line');
 } else {
-  var price_line = parseInt(args[0]);
   interval();
   setInterval(interval, 2 * 60000);
 }
